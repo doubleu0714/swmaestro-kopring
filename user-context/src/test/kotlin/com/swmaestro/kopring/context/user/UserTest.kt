@@ -18,6 +18,7 @@ class UserTest {
         // then
         actual.getOrThrow()
         actual.onSuccess {
+            println(it)
             assertEquals(userId, it.userId)
             assertEquals(registeredAt, it.registeredAt)
         }

@@ -1,8 +1,10 @@
 package com.swmaestro.kopring.context.user
 
 import java.time.LocalDateTime
+import java.util.UUID
 
 class User internal constructor(
+    val guid: String,
     val userId: String,
     val registeredAt: LocalDateTime
 ) {
@@ -13,7 +15,7 @@ class User internal constructor(
     companion object {
         fun create(command: CreateCommand): Result<User> = runCatching {
             with(command) {
-                User(userId = userId, registeredAt = registeredAt)
+                User(guid = UUID.randomUUID().toString(), userId = userId, registeredAt = registeredAt)
             }
         }
     }
@@ -24,17 +26,19 @@ class User internal constructor(
 
         other as User
 
+        if (guid != other.guid) return false
         if (userId != other.userId) return false
         return registeredAt == other.registeredAt
     }
 
     override fun hashCode(): Int {
-        var result = userId.hashCode()
+        var result = guid.hashCode()
+        result = 31 * result + userId.hashCode()
         result = 31 * result + registeredAt.hashCode()
         return result
     }
 
     override fun toString(): String {
-        return "User(userId='$userId', registeredAt=$registeredAt)"
+        return "User(guid='$guid', userId='$userId', registeredAt=$registeredAt)"
     }
 }
