@@ -1,4 +1,4 @@
-package infra.jpa
+package com.swmaestro.kopring.infra.jpa
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

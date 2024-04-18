@@ -1,4 +1,4 @@
-package infra.jpa
+package com.swmaestro.kopring.infra.jpa
 
 import com.swmaestro.kopring.context.wallet.ChargedWalletPoint
 import com.swmaestro.kopring.context.wallet.ReceivedWalletPoint

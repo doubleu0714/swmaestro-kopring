@@ -1,4 +1,4 @@
-package infra.jpa
+package com.swmaestro.kopring.infra.jpa
 
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Entity

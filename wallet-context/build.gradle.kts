@@ -13,5 +13,8 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+	kotlinOptions {
+		freeCompilerArgs += "-Xjsr305=strict"
+		jvmTarget = "17"
+	}
 }

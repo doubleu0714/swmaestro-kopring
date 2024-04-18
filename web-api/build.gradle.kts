@@ -11,8 +11,13 @@ plugins {
 dependencies {
     implementation(project(":user-context"))
     implementation(project(":wallet-context"))
+    implementation(project(":infra-layer"))
     implementation(project(":application-layer"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    runtimeOnly("com.h2database:h2")
     testImplementation(kotlin("test"))
 }
 
