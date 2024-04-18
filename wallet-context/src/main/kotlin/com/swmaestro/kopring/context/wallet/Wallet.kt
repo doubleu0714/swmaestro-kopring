@@ -84,5 +84,4 @@ class Wallet internal constructor(
             )
         }
     }
-
 }
