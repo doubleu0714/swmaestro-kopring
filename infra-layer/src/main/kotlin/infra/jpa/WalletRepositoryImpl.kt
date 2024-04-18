@@ -21,6 +21,13 @@ internal class WalletRepositoryImpl(
                 ?: error("")
         }
 
+    override fun findByUserId(userId: String): Result<Wallet> =
+        runCatching {
+            walletRepository.findByUserId(userId)?.domain
+                ?: error("")
+        }
+
+
     override fun save(wallet: Wallet): Result<Wallet> =
         runCatching {
             WalletEntity(

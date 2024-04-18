@@ -1,0 +1,15 @@
+package com.swmaestro.kopring.application
+
+import com.swmaestro.kopring.context.wallet.Wallet
+import com.swmaestro.kopring.context.wallet.WalletRepository
+
+class WalletApplication(
+    private val repository: WalletRepository
+) {
+    fun send(fromUserId: String, toUserId: String, amount: Int): Result<Wallet> = runCatching {
+        val to = repository.findByUserId(toUserId).getOrThrow()
+        val from = repository.findByUserId(fromUserId).getOrThrow()
+        to.receive(command = Wallet.ReceiveCommand(amount = amount)).getOrThrow()
+        return from.send(command = Wallet.SendCommand(amount = amount))
+    }
+}
