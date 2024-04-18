@@ -21,7 +21,7 @@ internal class UserRepositoryImpl(
         ).let(repository::save).domain
     }
 
-    private val UserEntity.domain
+    private val UserEntity.domain: User
         get() = User(
             guid = guid,
             userId = userId,
