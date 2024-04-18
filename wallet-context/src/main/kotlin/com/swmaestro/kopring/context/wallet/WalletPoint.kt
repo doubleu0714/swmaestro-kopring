@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 interface WalletPoint {
-    val guid: String,
+    val guid: String
     val amount: Int
     val createdAt: LocalDateTime
     val description: String
