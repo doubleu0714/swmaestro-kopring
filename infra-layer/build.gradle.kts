@@ -9,6 +9,8 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":user-context"))
+    implementation(project(":wallet-context"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     testImplementation(kotlin("test"))
 }

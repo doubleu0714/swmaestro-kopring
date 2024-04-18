@@ -9,7 +9,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/infra-layer" />
             <option value="$PROJECT_DIR$/user-context" />
             <option value="$PROJECT_DIR$/wallet-context" />
           </set>
