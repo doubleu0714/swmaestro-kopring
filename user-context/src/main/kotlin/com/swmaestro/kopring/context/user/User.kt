@@ -3,7 +3,7 @@ package com.swmaestro.kopring.context.user
 import java.time.LocalDateTime
 import java.util.UUID
 
-class User internal constructor(
+class User(
     val guid: String,
     val userId: String,
     val registeredAt: LocalDateTime
@@ -12,8 +12,9 @@ class User internal constructor(
         val userId: String,
         val registeredAt: LocalDateTime,
     )
+
     companion object {
-        fun create(command: CreateCommand): Result<User> = runCatching {
+        fun new(command: CreateCommand): Result<User> = runCatching {
             with(command) {
                 User(guid = UUID.randomUUID().toString(), userId = userId, registeredAt = registeredAt)
             }

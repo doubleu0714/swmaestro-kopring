@@ -1,4 +1,4 @@
-package com.swmaestro.kopring.infra.jpa
+package infra.jpa
 
 import com.swmaestro.kopring.context.user.User
 import com.swmaestro.kopring.context.user.UserRepository

@@ -11,7 +11,7 @@ class WalletPointTest {
         val command = ChargedWalletPoint.CreateCommand(chargedAmount = 100, chargedAt = LocalDateTime.now())
 
         // when
-        val actual: Result<ChargedWalletPoint> = ChargedWalletPoint.create(command = command)
+        val actual: Result<ChargedWalletPoint> = ChargedWalletPoint.new(command = command)
 
         // then
         actual.onSuccess {
@@ -27,7 +27,7 @@ class WalletPointTest {
         val command = SentWalletPoint.CreateCommand(sentAmount = 100, sentAt = LocalDateTime.now())
 
         // when
-        val actual: Result<SentWalletPoint> = SentWalletPoint.create(command = command)
+        val actual: Result<SentWalletPoint> = SentWalletPoint.new(command = command)
 
         // then
         actual.onSuccess {
@@ -43,7 +43,7 @@ class WalletPointTest {
         val command = ReceivedWalletPoint.CreateCommand(receivedAmount = 100, receivedAt = LocalDateTime.now())
 
         // when
-        val actual: Result<ReceivedWalletPoint> = ReceivedWalletPoint.create(command = command)
+        val actual: Result<ReceivedWalletPoint> = ReceivedWalletPoint.new(command = command)
 
         // then
         actual.onSuccess {
@@ -59,7 +59,7 @@ class WalletPointTest {
         val command = RejectedWalletPoint.CreateCommand(rejectedAmount = 100, rejectedAt = LocalDateTime.now())
 
         // when
-        val actual: Result<RejectedWalletPoint> = RejectedWalletPoint.create(command = command)
+        val actual: Result<RejectedWalletPoint> = RejectedWalletPoint.new(command = command)
 
         // then
         actual.onSuccess {

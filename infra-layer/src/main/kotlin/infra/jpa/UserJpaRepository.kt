@@ -1,4 +1,4 @@
-package com.swmaestro.kopring.infra.jpa
+package infra.jpa
 
 import org.springframework.data.jpa.repository.JpaRepository
 

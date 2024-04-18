@@ -1,6 +1,6 @@
 package com.swmaestro.kopring.context.wallet
 
-class WalletPoints internal constructor(
+class WalletPoints (
     internal val list: MutableList<WalletPoint>
 ) : List<WalletPoint> by list {
     companion object {

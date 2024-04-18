@@ -10,7 +10,7 @@ interface WalletPoint {
     val description: String
 }
 
-class ChargedWalletPoint internal constructor(
+class ChargedWalletPoint (
     override val guid: String,
     override val amount: Int,
     override val createdAt: LocalDateTime
@@ -19,7 +19,7 @@ class ChargedWalletPoint internal constructor(
 
     data class CreateCommand(val chargedAmount: Int, val chargedAt: LocalDateTime)
     companion object {
-        fun create(command: CreateCommand): Result<ChargedWalletPoint> = runCatching {
+        fun new(command: CreateCommand): Result<ChargedWalletPoint> = runCatching {
             ChargedWalletPoint(
                 guid = UUID.randomUUID().toString(),
                 amount = command.chargedAmount,
@@ -29,7 +29,7 @@ class ChargedWalletPoint internal constructor(
     }
 }
 
-class SentWalletPoint internal constructor(
+class SentWalletPoint (
     override val guid: String,
     override val amount: Int,
     override val createdAt: LocalDateTime
@@ -38,7 +38,7 @@ class SentWalletPoint internal constructor(
 
     data class CreateCommand(val sentAmount: Int, val sentAt: LocalDateTime)
     companion object {
-        fun create(command: CreateCommand): Result<SentWalletPoint> = runCatching {
+        fun new(command: CreateCommand): Result<SentWalletPoint> = runCatching {
             SentWalletPoint(
                 guid = UUID.randomUUID().toString(),
                 amount = command.sentAmount,
@@ -48,7 +48,7 @@ class SentWalletPoint internal constructor(
     }
 }
 
-class ReceivedWalletPoint internal constructor(
+class ReceivedWalletPoint (
     override val guid: String,
     override val amount: Int,
     override val createdAt: LocalDateTime
@@ -57,7 +57,7 @@ class ReceivedWalletPoint internal constructor(
 
     data class CreateCommand(val receivedAmount: Int, val receivedAt: LocalDateTime)
     companion object {
-        fun create(command: CreateCommand): Result<ReceivedWalletPoint> = runCatching {
+        fun new(command: CreateCommand): Result<ReceivedWalletPoint> = runCatching {
             ReceivedWalletPoint(
                 guid = UUID.randomUUID().toString(),
                 amount = command.receivedAmount,
@@ -67,7 +67,7 @@ class ReceivedWalletPoint internal constructor(
     }
 }
 
-class RejectedWalletPoint internal constructor(
+class RejectedWalletPoint (
     override val guid: String,
     override val amount: Int,
     override val createdAt: LocalDateTime
@@ -76,7 +76,7 @@ class RejectedWalletPoint internal constructor(
 
     data class CreateCommand(val rejectedAmount: Int, val rejectedAt: LocalDateTime)
     companion object {
-        fun create(command: CreateCommand): Result<RejectedWalletPoint> = runCatching {
+        fun new(command: CreateCommand): Result<RejectedWalletPoint> = runCatching {
             RejectedWalletPoint(
                 guid = UUID.randomUUID().toString(),
                 amount = command.rejectedAmount,

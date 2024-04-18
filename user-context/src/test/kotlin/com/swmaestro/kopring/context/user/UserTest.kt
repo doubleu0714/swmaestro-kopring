@@ -13,7 +13,7 @@ class UserTest {
         val userId = "userId"
         val registeredAt = LocalDateTime.now()
         val command = User.CreateCommand(userId = userId, registeredAt = registeredAt)
-        val actual: Result<User> = User.create(command = command)
+        val actual: Result<User> = User.new(command = command)
 
         // then
         actual.getOrThrow()

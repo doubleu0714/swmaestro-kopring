@@ -3,7 +3,7 @@ package com.swmaestro.kopring.context.wallet
 import java.time.LocalDateTime
 import java.util.UUID
 
-class Wallet internal constructor(
+class Wallet (
     val guid: String,
     val balance: Int,
     val userId: String,
@@ -12,7 +12,7 @@ class Wallet internal constructor(
     fun charge(command: ChargeCommand): Result<Wallet> = runCatching {
         applyWallet(
             balance = balance + command.amount,
-            point = ChargedWalletPoint.create(
+            point = ChargedWalletPoint.new(
                 command = ChargedWalletPoint.CreateCommand(
                     chargedAmount = command.amount,
                     chargedAt = LocalDateTime.now(),
@@ -24,7 +24,7 @@ class Wallet internal constructor(
     fun send(command: SendCommand): Result<Wallet> = runCatching {
         applyWallet(
             balance = balance - command.amount,
-            point = SentWalletPoint.create(
+            point = SentWalletPoint.new(
                 command = SentWalletPoint.CreateCommand(
                     sentAmount = command.amount,
                     sentAt = LocalDateTime.now(),
@@ -36,7 +36,7 @@ class Wallet internal constructor(
     fun receive(command: ReceiveCommand): Result<Wallet> = runCatching {
         applyWallet(
             balance = balance + command.amount,
-            point = ReceivedWalletPoint.create(
+            point = ReceivedWalletPoint.new(
                 command = ReceivedWalletPoint.CreateCommand(
                     receivedAmount = command.amount,
                     receivedAt = LocalDateTime.now(),
@@ -48,7 +48,7 @@ class Wallet internal constructor(
     fun reject(command: RejectCommand): Result<Wallet> = runCatching {
         applyWallet(
             balance = balance,
-            point = RejectedWalletPoint.create(
+            point = RejectedWalletPoint.new(
                 command = RejectedWalletPoint.CreateCommand(
                     rejectedAmount = command.amount,
                     rejectedAt = LocalDateTime.now(),
@@ -75,7 +75,7 @@ class Wallet internal constructor(
     data class RejectCommand(val amount: Int)
 
     companion object {
-        fun create(command: CreateCommand): Result<Wallet> = runCatching {
+        fun new(command: CreateCommand): Result<Wallet> = runCatching {
             Wallet(
                 guid = UUID.randomUUID().toString(),
                 balance = 0,

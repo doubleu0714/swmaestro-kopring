@@ -1,4 +1,4 @@
-package com.swmaestro.kopring.infa.jpa
+package infra.jpa
 
 import com.swmaestro.kopring.context.wallet.ChargedWalletPoint
 import com.swmaestro.kopring.context.wallet.ReceivedWalletPoint
@@ -23,7 +23,6 @@ internal class WalletRepositoryImpl(
 
     override fun save(wallet: Wallet): Result<Wallet> =
         runCatching {
-            val walletId = walletRepository.findByGuid(guid = wallet.guid)?.id
             WalletEntity(
                 id = walletRepository.findByGuid(guid = wallet.guid)?.id,
                 guid = wallet.guid,
