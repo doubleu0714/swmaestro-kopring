@@ -12,7 +12,8 @@ class UserApplicationTest {
         // given
         val userId = "test"
         val repository = FakeUserRepository()
-        val sut = UserApplication(repository = repository)
+        val walletRepository = FakeWalletRepository()
+        val sut = UserApplication(repository = repository, walletRepository)
 
         // when
         val actual: Result<User> = sut.register(userId = userId)
