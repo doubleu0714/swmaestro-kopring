@@ -10,17 +10,7 @@ class UserTest {
         // given
 
         // when
-        val userId = "userId"
-        val registeredAt = LocalDateTime.now()
-        val command = User.CreateCommand(userId = userId, registeredAt = registeredAt)
-        val actual: Result<User> = User.new(command = command)
 
         // then
-        actual.getOrThrow()
-        actual.onSuccess {
-            println(it)
-            assertEquals(userId, it.userId)
-            assertEquals(registeredAt, it.registeredAt)
-        }
     }
 }

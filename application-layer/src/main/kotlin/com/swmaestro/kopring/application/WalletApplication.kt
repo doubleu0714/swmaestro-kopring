@@ -1,8 +1,5 @@
 package com.swmaestro.kopring.application
 
-import com.swmaestro.kopring.context.wallet.Wallet
-import com.swmaestro.kopring.context.wallet.WalletRepository
-
 class WalletApplication(
     private val repository: WalletRepository
 ) {

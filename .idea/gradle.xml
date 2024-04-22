@@ -9,12 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/application-layer" />
             <option value="$PROJECT_DIR$/domain-layer" />
             <option value="$PROJECT_DIR$/domain-layer/user-context" />
             <option value="$PROJECT_DIR$/domain-layer/wallet-context" />
-            <option value="$PROJECT_DIR$/infra-layer" />
-            <option value="$PROJECT_DIR$/web-api" />
           </set>
         </option>
       </GradleProjectSettings>

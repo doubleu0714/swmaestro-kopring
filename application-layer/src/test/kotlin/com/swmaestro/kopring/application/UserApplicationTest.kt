@@ -1,7 +1,5 @@
 package com.swmaestro.kopring.application
 
-import com.swmaestro.kopring.context.user.User
-import com.swmaestro.kopring.context.user.UserRepository
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails

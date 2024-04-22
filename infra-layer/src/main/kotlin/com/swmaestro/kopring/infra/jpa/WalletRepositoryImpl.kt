@@ -4,10 +4,7 @@ import com.swmaestro.kopring.context.wallet.ChargedWalletPoint
 import com.swmaestro.kopring.context.wallet.ReceivedWalletPoint
 import com.swmaestro.kopring.context.wallet.RejectedWalletPoint
 import com.swmaestro.kopring.context.wallet.SentWalletPoint
-import com.swmaestro.kopring.context.wallet.Wallet
 import com.swmaestro.kopring.context.wallet.WalletPoint
-import com.swmaestro.kopring.context.wallet.WalletPoints
-import com.swmaestro.kopring.context.wallet.WalletRepository
 import org.springframework.stereotype.Repository
 
 @Repository

@@ -1,9 +1,5 @@
 package com.swmaestro.kopring.application
 
-import com.swmaestro.kopring.context.user.User
-import com.swmaestro.kopring.context.user.UserRepository
-import com.swmaestro.kopring.context.wallet.Wallet
-import com.swmaestro.kopring.context.wallet.WalletRepository
 import java.time.LocalDateTime
 
 class UserApplication(

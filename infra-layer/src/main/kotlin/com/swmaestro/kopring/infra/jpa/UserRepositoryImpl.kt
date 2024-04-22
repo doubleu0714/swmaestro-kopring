@@ -1,7 +1,5 @@
 package com.swmaestro.kopring.infra.jpa
 
-import com.swmaestro.kopring.context.user.User
-import com.swmaestro.kopring.context.user.UserRepository
 import org.springframework.stereotype.Repository
 
 @Repository
