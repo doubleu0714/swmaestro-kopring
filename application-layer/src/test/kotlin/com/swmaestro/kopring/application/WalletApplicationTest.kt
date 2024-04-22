@@ -1,7 +1,5 @@
 package com.swmaestro.kopring.application
 
-import com.swmaestro.kopring.context.user.User
-import com.swmaestro.kopring.context.user.UserRepository
 import com.swmaestro.kopring.context.wallet.ChargedWalletPoint
 import com.swmaestro.kopring.context.wallet.Wallet
 import com.swmaestro.kopring.context.wallet.WalletPoints
@@ -9,7 +7,6 @@ import com.swmaestro.kopring.context.wallet.WalletRepository
 import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
-import kotlin.test.assertFails
 
 class WalletApplicationTest {
     @Test

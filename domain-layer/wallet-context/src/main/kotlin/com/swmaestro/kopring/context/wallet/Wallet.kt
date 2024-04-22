@@ -22,6 +22,7 @@ class Wallet (
     }
 
     fun send(command: SendCommand): Result<Wallet> = runCatching {
+        require(balance >= command.amount)
         applyWallet(
             balance = balance - command.amount,
             point = SentWalletPoint.new(

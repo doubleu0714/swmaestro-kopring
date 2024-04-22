@@ -1,7 +1,7 @@
 
 rootProject.name = "kopring-sample"
-include("user-context")
-include("wallet-context")
+include(":domain-layer:user-context")
+include(":domain-layer:wallet-context")
 include("infra-layer")
 include("application-layer")
 include("web-api")

@@ -9,8 +9,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":user-context"))
-    implementation(project(":wallet-context"))
+    implementation(project(":domain-layer:user-context"))
+    implementation(project(":domain-layer:wallet-context"))
     implementation(project(":infra-layer"))
     implementation(project(":application-layer"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")

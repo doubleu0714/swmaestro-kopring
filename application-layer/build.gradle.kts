@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":user-context"))
-    implementation(project(":wallet-context"))
+    implementation(project(":domain-layer:user-context"))
+    implementation(project(":domain-layer:wallet-context"))
     testImplementation(kotlin("test"))
 }
 

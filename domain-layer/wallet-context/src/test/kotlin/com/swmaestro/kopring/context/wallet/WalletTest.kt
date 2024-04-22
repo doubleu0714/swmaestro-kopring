@@ -2,6 +2,7 @@ package com.swmaestro.kopring.context.wallet
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFails
 import kotlin.test.assertTrue
 
 class WalletTest {
@@ -84,6 +85,22 @@ class WalletTest {
         actual.onSuccess {
             assertEquals(sut.balance, it.balance)
             assertTrue { it.points[0] is RejectedWalletPoint }
+        }
+    }
+
+    @Test
+    fun `지갑의 잔액이 전송금액보다 작으면 전송 할 수 없다`() {
+        // given
+        val sut: Wallet = Wallet.new(command = Wallet.CreateCommand(userId = "userId")).getOrThrow()
+        sut.charge(command = Wallet.ChargeCommand(amount = 100))
+        val command = Wallet.SendCommand(amount = 2000)
+
+        // when
+        val actual: Result<Wallet> = sut.send(command = command)
+
+        // then
+        actual.onSuccess {
+            assertFails { "실패" }
         }
     }
 }
